@@ -4,12 +4,19 @@
 
 (function($){
     
-    $.fn.trimVal = function() {
-	    var	str = this.val().replace(/^\s\s*/, ''),
-		ws = /\s/,
-		i = str.length;
-	    while (ws.test(str.charAt(--i)));
-	    return str.slice(0, i + 1);
-    };
+  $.fn.trim = function(str) {
+
+	  var	str = str.replace(/^\s\s*/, ''),
+		  ws = /\s/,
+		  i = str.length;
+	  while (ws.test(str.charAt(--i)))
+	  return str.slice(0, i + 1);
+  };
+
+  $.fn.trimVal = function() {
+
+    return this.val().trim();
+
+  };
     
 })(jQuery);
